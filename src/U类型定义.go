@@ -13,7 +13,7 @@ func showNums(nums []int) {
 }
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
@@ -27,14 +27,49 @@ func showList(head *ListNode) {
 }
 
 type TreeNode struct {
-	Val int
-	Left *TreeNode
+	Val   int
+	Left  *TreeNode
 	Right *TreeNode
+}
+
+func showTree(root *TreeNode) {
+	var ans []int
+	p := []*TreeNode{root}
+	for len(p) > 0 {
+		var q []*TreeNode
+		for _, v := range p {
+			ans = append(ans, v.Val)
+			if v.Val == 0 {
+				continue
+			}
+			if v.Left != nil {
+				q = append(q, v.Left)
+			} else {
+				q = append(q, &TreeNode{0, nil, nil})
+			}
+			if v.Right != nil {
+				q = append(q, v.Right)
+			} else {
+				q = append(q, &TreeNode{0, nil, nil})
+			}
+		}
+		p = q
+	}
+
+	i := len(ans) - 1
+	for i >= 0 {
+		if ans[i] != 0 {
+			break
+		}
+		i--
+	}
+	ans = ans[:i+1]
+	showNums(ans)
 }
 
 type node struct {
 	val int
-	id int
+	id  int
 }
 
 type nodes []node
