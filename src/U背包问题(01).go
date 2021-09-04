@@ -28,12 +28,13 @@ func main() {
 	}
 
 	// 初始化
-	for i := 0; i < n+1; i++ {
-		dp[i][0] = 0
-	}
-	for j := 0; j < c+1; j++ {
-		dp[0][j] = 0
-	}
+	//for i := 0; i < n+1; i++ {
+	//	dp[i][0] = 0
+	//}
+	//for j := 0; j < c+1; j++ {
+	//	dp[0][j] = 0
+	//}
+	// 不用再初始化了，因为创建切片时自动赋默认值0了
 
 	// 填表
 	for i := 1; i < n+1; i++ {
@@ -45,7 +46,7 @@ func main() {
 				continue
 			}
 			// 放1次的情况
-			if dp[i-1][j] < dp[i-1][j-w[i]]+v[i] {
+			if dp[i][j] < dp[i-1][j-w[i]]+v[i] {
 				dp[i][j] = dp[i-1][j-w[i]] + v[i]
 			}
 		}
