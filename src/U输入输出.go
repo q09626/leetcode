@@ -5,7 +5,6 @@ func main() {
 	//var i, j, k int
 	//fmt.Scan(&i, &j, &k)
 
-
 	//var i, j, k int
 	//fmt.Scanln(&i, &j, &k)
 
@@ -16,7 +15,7 @@ func main() {
 	//r := bufio.NewReader(os.Stdin)  // 返回*Reader
 	//s, _ := r.ReadString('\n') // 一直读，直到第一次出现‘\n’，字符串s带有‘\n’
 
-	// 打印输入的数字
+	//打印输入的数字
 	//r := bufio.NewReader(os.Stdin)
 	//for {
 	//	l, _, _ := r.ReadLine()
