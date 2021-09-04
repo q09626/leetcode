@@ -38,10 +38,13 @@ func main() {
 	// 填表
 	for i := 1; i < n+1; i++ {
 		for j := 1; j < c+1; j++ {
+			// 默认是放0次的情况
 			dp[i][j] = dp[i-1][j]
+			// 放0次的情况
 			if w[i] > j {
 				continue
 			}
+			// 放1次的情况
 			if dp[i-1][j] < dp[i-1][j-w[i]]+v[i] {
 				dp[i][j] = dp[i-1][j-w[i]] + v[i]
 			}
