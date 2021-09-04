@@ -7,18 +7,18 @@ import (
 
 func main() {
 	stack := list.List{}
-	stack.PushBack(node{1,1})
-	stack.PushBack(node{4,2})
-	stack.PushBack(node{2,3})
+	stack.PushBack(node{1, 1})
+	stack.PushBack(node{4, 2})
+	stack.PushBack(node{2, 3})
 	showListStruct(stack)
 
-	four := stack.PushFront(node{8,4})
+	four := stack.PushFront(node{8, 4})
 	showListStruct(stack)
 
-	stack.InsertBefore(node{6,5}, stack.Back())
+	stack.InsertBefore(node{6, 5}, stack.Back())
 	showListStruct(stack)
 
-	stack.InsertAfter(node{9,6}, stack.Front())
+	stack.InsertAfter(node{9, 6}, stack.Front())
 	showListStruct(stack)
 
 	stack.MoveToBack(four)
@@ -35,4 +35,3 @@ func main() {
 	}
 	//showListStruct(stack)
 }
-
