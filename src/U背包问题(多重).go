@@ -3,28 +3,28 @@ package main
 import "fmt"
 
 func main() {
-	//n, c := 4, 10
-	//v := []int{0,2,3,2,3} // 补0，下标i=第i个
-	//w := []int{0,3,4,2,5}
-	//m := []int{0,2,2,1,4}
+	var n, c int
+	fmt.Scan(&n, &c)
 
-	n, c := 3, 15
-	v := []int{0, 2, 3, 4} // 补0，下标i=第i个
-	w := []int{0, 3, 4, 5}
-	m := []int{0, 4, 3, 2}
+	var v []int = make([]int, n+1)
+	var w []int = make([]int, n+1)
+	var m []int = make([]int, n+1)
+	v[0] = 0
+	w[0] = 0
+	m[0] = 0
+
+	for i := 1; i <= n; i++ {
+		var vi, wi, mi int
+		fmt.Scan(&vi, &wi, &mi)
+		v[i] = vi
+		w[i] = wi
+		m[i] = mi
+	}
 
 	dp := make([][]int, n+1) // 长度加1
 	for i := 0; i < n+1; i++ {
-		dp[i] = make([]int, c+1)
+		dp[i] = make([]int, c+1) // 长度加1
 	}
-
-	// 初始化
-	//for i := 0; i < n+1; i++ {
-	//	dp[i][0] = 0
-	//}
-	//for j := 0; j < c+1; j++ {
-	//	dp[0][j] = 0
-	//}
 
 	// 填表
 	for i := 1; i < n+1; i++ {
