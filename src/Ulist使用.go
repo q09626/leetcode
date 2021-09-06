@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	stack := list.List{}
+	stack := list.List{} // 返回的是引用
+	//stack := list.New() // 返回的是指针
 	stack.PushBack(node{1, 1})
 	stack.PushBack(node{4, 2})
 	stack.PushBack(node{2, 3})
