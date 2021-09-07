@@ -22,15 +22,15 @@ func letterCombinations(digits string) []string {
 	return combinations
 }
 
-func backtrack(digits string, index int, combination string){
+func backtrack(digits string, index int, combination string) {
 	if index == len(digits) {
 		combinations = append(combinations, combination)
-	} else {
-		digit := string(digits[index])
-		letters := phoneMap[digit]
-		lettersCount := len(letters)
-		for i := 0; i < lettersCount; i++ {
-			backtrack(digits, index + 1, combination + string(letters[i]))
-		}
+		return
+	}
+	digit := string(digits[index])
+	letters := phoneMap[digit]
+	lettersCount := len(letters)
+	for i := 0; i < lettersCount; i++ {
+		backtrack(digits, index+1, combination+string(letters[i]))
 	}
 }
