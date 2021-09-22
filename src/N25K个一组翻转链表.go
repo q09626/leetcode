@@ -2,9 +2,9 @@ package main
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	dummy := &ListNode{0, head}
-	start := dummy
-	p := start.Next
-	r := start.Next
+	var start, p, r *ListNode
+	start = dummy
+	p = start.Next
 	for {
 		r = p // 新链表的开头等于合成后的尾
 		for i := 1; i < k; i++ {
