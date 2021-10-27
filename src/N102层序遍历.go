@@ -10,13 +10,13 @@ func levelOrder(root *TreeNode) [][]int {
 		ret = append(ret, []int{})
 		var p []*TreeNode
 		for j := 0; j < len(q); j++ {
-			node := q[j]
-			ret[i] = append(ret[i], node.Val)
-			if node.Left != nil {
-				p = append(p, node.Left)
+			tmp := q[j]
+			ret[i] = append(ret[i], tmp.Val)
+			if tmp.Left != nil {
+				p = append(p, tmp.Left)
 			}
-			if node.Right != nil {
-				p = append(p, node.Right)
+			if tmp.Right != nil {
+				p = append(p, tmp.Right)
 			}
 		}
 		q = p
