@@ -98,3 +98,9 @@ func min(x, y int) int {
 	}
 	return x
 }
+
+type RNode struct {
+	Val    int
+	Next   *RNode
+	Random *RNode
+}
