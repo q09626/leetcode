@@ -6,6 +6,13 @@ import (
 )
 
 func main() {
+	// string转[]byte
+	by := []byte("string")
+	fmt.Println(by)
+	// []byte转string
+	st := string([]byte{'s', 't', 'r', 'i', 'n', 'g'})
+	fmt.Println(st)
+
 	// int转string
 	fmt.Println(strconv.Itoa(99))
 	// string转int
